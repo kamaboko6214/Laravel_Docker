@@ -1,0 +1,24 @@
+/* headerスタイリング */
+.container-fluid {
+    padding: 10px 50px;
+}
+
+.navbar-brand {
+    font-family: "Hannari";
+}
+
+/* footerスタイリング */
+.footer {
+    height: 280px;
+    background-color: black;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    padding: 80px 40px;
+}
+
+.footer-container div {
+    flex: 1;
+}
