@@ -5,13 +5,13 @@
 
     <body>
         <div class="all-item">
-            <div class="img cover-img position-relative" id="main">
+            <div class="img">
                 <div class="text-white d-flex d-flex align-items-center justify-content-center" style="height:400px;">
                     <div class="main-text">
                         <h1 class="logo text-center">旅のしおり</h1>
                         <p>予定を簡単に作成し、共有できるサービスです。</p>
                         <div class="text-center mt-5">
-                            <a href="#"><button class="btn btn-primary rounded-pill btn-lg">予定を作成する！</button></a>
+                            <a href="/create"><button class="btn btn-primary rounded-pill btn-lg">予定を作成する！</button></a>
                         </div>
                     </div>
                 </div>
