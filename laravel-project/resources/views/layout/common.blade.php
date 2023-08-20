@@ -10,8 +10,7 @@
     <meta name="description" itemprop="description" content="@yield('description')">
     <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
-    <link href="/css/layout.css" rel="stylesheet">
-    <link href="/css/app.css" rel="stylesheet">
+    @vite(['resources/scss/app.scss', 'resources/js/app.js', 'resources/scss/layout.scss'])
     @yield('pageCss')
     </head>
     <body>

@@ -15,7 +15,7 @@
                                 <a class="nav-link fs-5" aria-current="page" href="/">ホーム</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link fs-5 mx-3" href="#">予定を作成する</a>
+                                <a class="nav-link fs-5 mx-3" href="/create">予定を作成する</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle fs-5 mx-3" href="#" id="navbarDropdown" role="button"
