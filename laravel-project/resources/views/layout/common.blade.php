@@ -6,11 +6,12 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1”>
     <title>@yield('title')旅のしおり</title>
     <meta name="description" itemprop="description" content="@yield('description')">
     <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
-    @vite(['resources/scss/app.scss', 'resources/js/app.js', 'resources/scss/layout.scss'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js', 'resources/scss/layout.scss', 'resources/js/index.js'])
     @yield('pageCss')
     </head>
     <body>
