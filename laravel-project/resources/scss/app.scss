@@ -1,72 +1,132 @@
-
 /* トップページスタイリング */
 .all-item {
     .img {
         padding: 100px 0px;
         width: 100%;
-        height:100vh;
-        background-position: center ; 
-        background-repeat: no-repeat;  
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
         background-image: url("../../public/images/bg.jpg");
-        background-size: cover;    
+        background-size: cover;
+    }
+
+    .title-body {
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
     }
 }
 
 body {
     height: 100vh;
     opacity: 1;
-     background-size: cover;
-  }
+    background-size: cover;
+}
 
-.main-text {
-    animation-name:fadeInAnime;
-    animation-duration:4s;
-    animation-fill-mode:forwards;
-    opacity:0;
-    @keyframes fadeInAnime{
+.title-text {
+    animation-name: fadeInAnime;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    @keyframes fadeInAnime {
         from {
-          opacity: 0;
+            opacity: 0;
         }
-      
+
         to {
-          opacity: 1;
+            opacity: 1;
         }
-      }
-    
+    }
+
     h1 {
-    font-family: "Hannari";
-    font-size: 80px
+        font-family: "Hannari";
+        font-size: 80px
     }
 
     p {
         padding-top: 40px;
         font-size: 20px;
     }
+    .btn-primary {
+        background: #6851F4;
+        outline: none;
+    }
+    
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary:active:focus,
+    .btn-primary:active:hover,
+    .btn-primary:active.focus,
+    .btn-primary.active,
+    .btn-primary.active:focus,
+    .btn-primary.active:hover,
+    .btn-primary.active.focus,
+    .open>.dropdown-toggle.btn-primary,
+    .open>.dropdown-toggle.btn-primary:hover,
+    .open>.dropdown-toggle.btn-primary:focus,
+    .open>.dropdown-toggle.btn-primary.focus,
+    .btn-primary.disabled:hover,
+    .btn-primary[disabled]:hover,
+    fieldset[disabled] .btn-primary:hover,
+    .btn-primary.disabled:focus,
+    .btn-primary[disabled]:focus,
+    fieldset[disabled] .btn-primary:focus,
+    .btn-primary.disabled.focus,
+    .btn-primary[disabled].focus,
+    fieldset[disabled] .btn-primary.focus {
+        background: #6851F4;
+        color: white;
+        outline: none;
+    }
 }
 
 .main-container {
-    margin:100px 80px;
+    margin: 100px 80px;
+
     h1 {
         font-size: 65px;
         font-weight: bold;
     }
-}   
-	
+}
+
 .flex-container {
     height: 400px;
     margin: 80px 40px;
     display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+
+    .flex-container {
+        height: 400px;
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .flex-item {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .flex-item {
-    flex: 1;
     padding: 20px;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
+
     h3 {
         text-align: center;
         padding-bottom: 30px;
     }
+
     p {
         text-align: start;
         color: #696969;
@@ -82,37 +142,49 @@ body {
     margin-right: auto;
 }
 
+
+
 // 作成ページ
 .workapce {
-    background-size: cover; 
-    height:100vh;
+    background-size: cover;
+    height: 100vh;
     padding-top: 20vh;
+    padding: 50px 50px;
     position: relative;
-    background-position: center; 
+    background-position: center;
     background-image: url("../../public/images/pexels-suzy-hazelwood-12517600.jpg");
     display: flex;
-    .work_main {
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    h3 {
+        font-size: 70px;
+        position: absolute;
+        top: 180px;
+        font-weight: bold;
+        color: white;
+    }
+    input {
+        top: 350px;
+        width: 70%;
+        padding: 1em 0.5em;
+        line-height: 2;
+        font-size: 20px;
         margin-left: auto;
         margin-right: auto;
-        h3 {
-            font-size: 50px;
-            position:absolute;
-            font-weight: bold;
-            color: white;
-        }
-        .input-group {
-            margin-top: 100px;
-            margin-left: auto;
-            margin-right: auto;
-                input {
-                box-shadow: 5px 5px 5px rgb(103, 103, 103);
-            }
-        }
+        position: absolute;
+
+        box-shadow: 5px 5px 5px rgb(65, 65, 65);
     }
 }
-.work_main::before {
+
+textarea {
+    resize: none;
+}
+
+.workapce::before {
     content: '';
     background-color: rgba(32, 32, 32, 0.7);
     position: absolute;
@@ -120,25 +192,30 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-  }
+}
+
+.overview {
+    margin: 130px 180px;
+    h1 {
+        font-size: 50px;
+        margin-bottom: 60px;
+        font-weight: bold;
+        border-bottom: double 5px #008cff;
+    }
+    .card {
+        margin-bottom: 20px;
+    }
+    .view_title::placeholder {
+        color: #b7b6b6;
+    }
+    .view_body::placeholder {
+        color: #b7b6b6;
+    }
+    button {
+        background-color: #008cff;
+        outline: none;
+    }
+}
+
 /* カスタマイズ */
 
-.btn-primary {
-    background: #6851F4;
-    outline: none;
-}
-
-.btn-primary:hover, .btn-primary:focus, 
-.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
-.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
-.open > .dropdown-toggle.btn-primary, 
-.open > .dropdown-toggle.btn-primary:hover,
-.open > .dropdown-toggle.btn-primary:focus, 
-.open > .dropdown-toggle.btn-primary.focus,
-.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
-    background: #6851F4;
-    color: white;
-    outline: none;
-}
