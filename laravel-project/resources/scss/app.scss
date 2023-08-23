@@ -19,9 +19,9 @@
 }
 
 body {
-    height: 100vh;
     opacity: 1;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .title-text {
@@ -49,11 +49,12 @@ body {
         padding-top: 40px;
         font-size: 20px;
     }
+
     .btn-primary {
         background: #6851F4;
         outline: none;
     }
-    
+
     .btn-primary:hover,
     .btn-primary:focus,
     .btn-primary:active,
@@ -145,38 +146,45 @@ body {
 
 
 // 作成ページ
-.workapce {
-    background-size: cover;
-    height: 100vh;
-    padding-top: 20vh;
-    padding: 50px 50px;
-    position: relative;
-    background-position: center;
-    background-image: url("../../public/images/pexels-suzy-hazelwood-12517600.jpg");
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+.plan_container {
+    .workapce {
+        background-size: cover;
+        height: 70vh;
+        width: 100%;
+        padding-top: 30vh;
+        padding: 50px 50px;
+        position: relative;
+        background-position: center;
+        background-image: url("../../public/images/27109395_l.jpg");
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .plan_message {
+            width: 50%;
+            margin-bottom: 30px;
+            position: relative;
+            h3 {
+                font-size: 70px;
+                width: 100%;
+                font-weight: bold;
+                color: white;
+            }
 
-    h3 {
-        font-size: 70px;
-        position: absolute;
-        top: 180px;
-        font-weight: bold;
-        color: white;
-    }
-    input {
-        top: 350px;
-        width: 70%;
-        padding: 1em 0.5em;
-        line-height: 2;
-        font-size: 20px;
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
+            p {
+                padding-top: 30px;
+                font-size: 20px;
+                font-weight: bold;
+                color: white;
+            }
+        }
 
-        box-shadow: 5px 5px 5px rgb(65, 65, 65);
+        .plan_card {
+            width: 50%;
+            .btn {
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -195,27 +203,48 @@ textarea {
 }
 
 .overview {
-    margin: 130px 180px;
+    margin: 20px 300px;
+    padding: 80px;
     h1 {
-        font-size: 50px;
-        margin-bottom: 60px;
-        font-weight: bold;
-        border-bottom: double 5px #008cff;
+        position: relative;
+        color: white;
+        background: #81d0cb;
+        line-height: 1.4;
+        padding: 0.5em 0.5em 0.5em 1.8em;
+        margin-bottom: 30px;
     }
-    .card {
+    h1:before {
+        // font-family: "Font Awesome 5 Free";
+        content: "\f14a";
+        font-weight: 900;
+        position: absolute;
+        left : 0.5em; /*左端からのアイコンまでの距離*/
+      }
+    .card_content {
         margin-bottom: 20px;
+        width: 80%;
     }
+
     .view_title::placeholder {
         color: #b7b6b6;
     }
+
     .view_body::placeholder {
         color: #b7b6b6;
     }
-    button {
+
+    .add {
         background-color: #008cff;
         outline: none;
+        margin-bottom: 50px;
+    }
+
+    .remove {
+        // margin-bottom: 50px;
+        height: 30px;
+        width: 30px;
+        margin: 0 5px 20px auto;
     }
 }
 
 /* カスタマイズ */
-
