@@ -156,7 +156,6 @@ body {
         position: relative;
         background-position: center;
         background-image: url("../../public/images/27109395_l.jpg");
-        background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -165,7 +164,7 @@ body {
             margin-bottom: 30px;
             position: relative;
             h3 {
-                font-size: 70px;
+                font-size: 60px;
                 width: 100%;
                 font-weight: bold;
                 color: white;
@@ -183,6 +182,12 @@ body {
             width: 50%;
             .btn {
                 width: 100%;
+            }
+            .view_sub {
+                margin-top: 20px;
+            }
+            input {
+                font-size: 20px;
             }
         }
     }
@@ -202,28 +207,42 @@ textarea {
     left: 0;
 }
 
+
+
 .overview {
-    margin: 20px 300px;
-    padding: 80px;
+    padding: 70px;
+    .card_content {
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 0.5em 1em;
+        // margin: 1em 0;
+        width: 700px;
+        background: #f4f4f4;
+        border-left: solid 6px #5bb7ae;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+        margin-left: auto;
+        margin-right: auto;  
+    }
     h1 {
         position: relative;
-        color: white;
-        background: #81d0cb;
-        line-height: 1.4;
-        padding: 0.5em 0.5em 0.5em 1.8em;
-        margin-bottom: 30px;
+        font-size: 26px;
+        text-align: center;
+        border-bottom: 5px solid #dddddd;
+        margin-bottom: 40px;
     }
-    h1:before {
-        // font-family: "Font Awesome 5 Free";
-        content: "\f14a";
-        font-weight: 900;
+    h1:after {
+        content: '';
         position: absolute;
-        left : 0.5em; /*左端からのアイコンまでの距離*/
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 5px;
+        background-color: #5bb7ae;
       }
-    .card_content {
-        margin-bottom: 20px;
-        width: 80%;
-    }
 
     .view_title::placeholder {
         color: #b7b6b6;
@@ -236,7 +255,7 @@ textarea {
     .add {
         background-color: #008cff;
         outline: none;
-        margin-bottom: 50px;
+        margin-bottom: 10px;
     }
 
     .remove {
@@ -247,4 +266,60 @@ textarea {
     }
 }
 
-/* カスタマイズ */
+.overview-s {
+    padding: 70px;
+    .card_content_s {
+        margin-bottom: 20px;
+        width: 80%;
+    }
+
+    .card {
+        padding: 0.5em 1em;
+        width: 700px;
+        background: #f4f4f4;
+        border-left: solid 6px #5bb7ae;
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+        margin-left: auto;
+        margin-right: auto;  
+    }
+    h1 {
+        display: block;
+        position: relative;
+        font-size: 26px;
+        text-align: center;
+        border-bottom: 5px solid #dddddd;
+        margin-bottom: 40px;
+    }
+    h1:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+        height: 5px;
+        background-color: #5bb7ae;
+      }
+
+    .view_title::placeholder {
+        color: #b7b6b6;
+    }
+
+    .view_body::placeholder {
+        color: #b7b6b6;
+    }
+
+    .add {
+        background-color: #008cff;
+        outline: none;
+        margin-bottom: 10px;
+    }
+
+    .remove {
+        // margin-bottom: 50px;
+        height: 30px;
+        width: 30px;
+        margin: 0 5px 20px auto;
+    }
+}
+
