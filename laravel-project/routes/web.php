@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('pages/main');
 });
 
-Route::get('/create', [TravelController::class, 'index']);
+Route::get('/create', [TravelController::class, 'create']);
+Route::post('/travel/create', [TravelController::class, 'store']);
+Route::get('/test', [TravelController::class, 'index']);
