@@ -11,7 +11,9 @@
                         <h1 class="logo text-center">旅のしおり</h1>
                         <p>予定を簡単に作成し、共有できるサービスです。</p>
                         <div class="text-center mt-5">
-                            <a href="/create"><button class="btn btn-primary rounded-pill btn-lg">予定を作成する！</button></a>
+                            <div class="button013">
+                                <a href="/create">しおりを作成する→</a>
+                            </div>
                         </div>
                     </div>
                 </div>
