@@ -2,7 +2,7 @@
     <header class="header fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="opacity:0.9">
             <div class="container-fluid mx-3">
-                <a class="navbar-brand fs-2 fw-bold" href="/">旅のしおり</a>
+                <a class="navbar-brand fs-2 fw-bold" href="/">旅の手帳</a>
                 <div class="d-flex">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
