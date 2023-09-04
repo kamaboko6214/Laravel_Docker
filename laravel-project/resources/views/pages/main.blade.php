@@ -8,7 +8,7 @@
             <div class="img">
                 <div class="title-body" style="height:400px;">
                     <div class="title-text">
-                        <h1 class="logo text-center">旅のしおり</h1>
+                        <h1 class="logo text-center">旅の手帳</h1>
                         <p>予定を簡単に作成し、共有できるサービスです。</p>
                         <div class="text-center mt-5">
                             <div class="button013">

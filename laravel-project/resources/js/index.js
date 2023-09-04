@@ -3,13 +3,10 @@ window.add_card = () => {
     let card = document.getElementById("card_content")
     let clone_card = card.cloneNode(true)
     let card_id = card.id
-    let clone_card_id = card_id + (new Date()).getTime()
-    clone_card.id = clone_card_id
-    let title = document.getElementById("view_title")
-    title.value = ''
-    let body = document.getElementById("view_body")
-    body.value = ''
+    clone_card.id = card_id + (new Date()).getTime()
     overview.appendChild(clone_card);
+    clone_card.getElementsByTagName('input')[0].value=''
+    clone_card.getElementsByTagName('textarea')[0].value=''
 }
 
 window.add_schedule = () => {
@@ -19,11 +16,12 @@ window.add_schedule = () => {
     let card_id = card.id
     let clone_card_id = card_id + (new Date()).getTime()
     clone_card.id = clone_card_id
-    let title = document.getElementById("view_title_s")
-    title.value = ''
-    let body = document.getElementById("view_body_s")
-    body.value = ''
     overview.appendChild(clone_card);
+    // inputを初期化
+    clone_card.getElementsByTagName('input')[0].value=''
+    clone_card.getElementsByTagName('input')[1].value='10:00'
+    clone_card.getElementsByTagName('input')[2].value=''
+    clone_card.getElementsByTagName('textarea')[0].value=''
 }
 
 
@@ -41,6 +39,3 @@ window.remove_card = (e) => {
         parent.remove()
     }
 };
-
-
-
