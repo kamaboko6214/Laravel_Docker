@@ -7,6 +7,9 @@ window.add_card = () => {
     overview.appendChild(clone_card);
     clone_card.getElementsByTagName('input')[0].value=''
     clone_card.getElementsByTagName('textarea')[0].value=''
+    clone_card.getElementsByTagName('input')[0].id = card_id + (new Date()).getTime()
+    clone_card.getElementsByTagName('textarea')[0].id = card_id + (new Date()).getTime()
+
 }
 
 window.add_schedule = () => {
@@ -22,6 +25,8 @@ window.add_schedule = () => {
     clone_card.getElementsByTagName('input')[1].value='10:00'
     clone_card.getElementsByTagName('input')[2].value=''
     clone_card.getElementsByTagName('textarea')[0].value=''
+    clone_card.getElementsByTagName('input').id = card_id + (new Date()).getTime()
+    clone_card.getElementsByTagName('textarea').id = card_id + (new Date()).getTime()
 }
 
 

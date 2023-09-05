@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Travel;
 use App\Models\Overview;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TravelController extends Controller
 {
@@ -37,11 +38,49 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        $travel = new Travel();
-        $travel->title = $request->title;
-        $travel->subtitle = $request->sub_title;
-        $travel->save();
-        return view('pages.main');
+        DB::beginTransaction();
+        try{
+            $travel = new Travel();
+            $travel->title = $request->title;
+            $travel->subtitle = $request->sub_title;
+            $travel->save();
+
+            $overviews = $request->all();
+            foreach ($overviews['overview_title'] as $overview) {
+                    $data = [
+                        'travel_id' => $travel->id,
+                        'title' => $overview,
+                        'content' => 'test',
+                    ];
+                Overview::insert($data);
+            }
+            // foreach ($overviews['overview_content'] as $overview) {
+            //     foreach ($overview as $key => $value) {
+            //         $data = [
+            //             'travel_id' => $travel->id,
+            //             'content' => $value,
+            //         ];
+            //     $overview = Overview::insert($data);
+            //     }
+            // }
+            // $overviews = $request->all(); // ①
+            // foreach ($votes['vote'] as $vote) {
+            //     foreach ($vote as $key => $value) {
+            //         $data = [
+            //             'vote' => $value,
+            //             'question_id' => $question->id,
+            //         ];
+            //     // ③
+            //     $vote = Vote::insert($data);
+            //     }
+            // }
+        } catch(\Exception $e) {
+            var_dump('失敗');
+            DB::rollback();
+            return back()->withInput();
+        }
+        DB::commit();
+        return redirect('/create');
 
     }
 
