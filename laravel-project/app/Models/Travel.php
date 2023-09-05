@@ -13,4 +13,8 @@ class Travel extends Model
     public function overviews() {
         return $this->hasmany('App\Models\Overview');
     }
+
+    public function plans() {
+        return $this->hasmany('App\Models\Plan');
+    }
 }
