@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Travel;
 use App\Models\Overview;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\StoreRequest;
 
 class TravelController extends Controller
 {
@@ -36,8 +38,9 @@ class TravelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
+
         DB::beginTransaction();
         try{
             $travel = new Travel();
@@ -45,41 +48,53 @@ class TravelController extends Controller
             $travel->subtitle = $request->sub_title;
             $travel->save();
 
-            $overviews = $request->all();
-            foreach ($overviews['overview_title'] as $overview) {
-                    $data = [
+            //リクエストの内容を取得
+            $all_requests = $request->all();
+
+            //概要の内容を取得
+            $overview_titles = $all_requests['overview_title'];
+            $overview_contents = $all_requests['overview_content'];
+            
+            //概要をインサート
+            foreach (array_map(null,$overview_titles,$overview_contents) as [$title,$content]) {
+                    $o_data = [
                         'travel_id' => $travel->id,
-                        'title' => $overview,
-                        'content' => 'test',
+                        'title' => $title,
+                        'content' => $content,
+                        'created_at' => now(),
+                        'updated_at' => now(),
                     ];
-                Overview::insert($data);
+                Overview::insert($o_data);
             }
-            // foreach ($overviews['overview_content'] as $overview) {
-            //     foreach ($overview as $key => $value) {
-            //         $data = [
-            //             'travel_id' => $travel->id,
-            //             'content' => $value,
-            //         ];
-            //     $overview = Overview::insert($data);
-            //     }
-            // }
-            // $overviews = $request->all(); // ①
-            // foreach ($votes['vote'] as $vote) {
-            //     foreach ($vote as $key => $value) {
-            //         $data = [
-            //             'vote' => $value,
-            //             'question_id' => $question->id,
-            //         ];
-            //     // ③
-            //     $vote = Vote::insert($data);
-            //     }
-            // }
+
+            //プランの内容を取得
+            $plan_titles = $all_requests['plan_title'];
+            $plan_contents = $all_requests['plan_content'];
+            $plan_dates = $all_requests['date'];
+            $plan_times = $all_requests['time'];
+
+            //プランをインサート
+            foreach (array_map(null,$plan_titles,$plan_contents,$plan_dates,$plan_times) as [$title,$content,$date,$time]) {
+                $p_data = [
+                    'travel_id' => $travel->id,
+                    'title' => $title,
+                    'date' => $date,
+                    'time' => $time,
+                    'location' => 'test',
+                    'content' => $content,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ];
+            Plan::insert($p_data);
+        }
+
         } catch(\Exception $e) {
             var_dump('失敗');
             DB::rollback();
             return back()->withInput();
         }
         DB::commit();
+
         return redirect('/create');
 
     }

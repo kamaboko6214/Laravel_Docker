@@ -18,10 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('travel_id')->unsigned();
             $table->foreign('travel_id')->references('id')->on('travels')->onUpdate('CASCADE')->onDelete('CASCADE');
             $table->string('title');
+            $table->text('content');
             $table->date('date');
             $table->time('time');
             $table->string('location');
-            $table->text('content');
             $table->timestamps();
         });
     }
