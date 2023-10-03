@@ -32,14 +32,24 @@ class TravelController extends Controller
         return view('pages.createPlan');
     }
 
+    public function confirm(StoreRequest $request) 
+    {
+        return view('pages.confirmPlan', [
+            'inputs' => $request->all(),
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRequest $request)
+    public function store(Request $request)
     {
+        $test = $request->all();
+        if ($request->has('edit')) {
+            return redirect('/create')->withInput($request->all());
+        }
 
         DB::beginTransaction();
         try{

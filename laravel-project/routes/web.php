@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::get('/create', [TravelController::class, 'create']);
 Route::post('/travel/create', [TravelController::class, 'store']);
+Route::post('/travel/create/confirm', [TravelController::class, 'confirm']);
 Route::get('/test', [TravelController::class, 'index']);
