@@ -5,7 +5,7 @@
 
     <body>
         <div class="plan_container">
-            <form action="/travel/create" method="post">
+            <form action="/travel/create/confirm" method="post">
                 {{ csrf_field() }}
                 <div class="workapce">
                     <div class="plan_message">
@@ -16,9 +16,9 @@
                     <div class="plan_card" name="card_content_plan">
                         <div class="card" id="card">
                             <div class="card-header">
-                                <input class="view_head form-control" name="title" id="" cols="30"
+                                <input class="view_head form-control" name="title" id="" cols="30" value= {{ old('title') }}
                                     rows="5" placeholder="しおりのタイトル">
-                                <input class="view_sub form-control" name="sub_title" id="" cols="30"
+                                <input class="view_sub form-control" name="sub_title" id="" cols="30" value= {{ old('sub_title') }}
                                     rows="5" placeholder="サブタイトル">
 
                             </div>
@@ -78,7 +78,7 @@
                             id="add_button">➕追加</button>
                     </div>
                 </div>
-                <button class="btn btn-primary">作成</button>
+                <button class="btn btn-primary">入力内容を確認する</button>
             </form>
         </div>
     </body>

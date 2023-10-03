@@ -26,20 +26,8 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'subtitle' => 'required|between:0,150',
+            'sub_title' => 'required|between:0,150',
         ];
     }
 
-    // public function post(Request $request) {
-    //     $validate_rules = Validator::make($request->all(), [
-    //         'title' => 'required',
-    //         'subtitle' => 'required|between:0,150',
-    //     ]);
-    //     if ($validate_rules->fail()) {
-    //         return redirect('/test')
-    //             ->withErrors($validate_rules)
-    //             ->withInput();
-    //     }
-    //         return redirect('/create');
-    // }
 }
