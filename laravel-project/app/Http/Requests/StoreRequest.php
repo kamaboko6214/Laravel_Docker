@@ -26,7 +26,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'sub_title' => 'required|between:0,150',
+            'subtitle' => 'required|between:0,150',
         ];
     }
 

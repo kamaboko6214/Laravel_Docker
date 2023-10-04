@@ -11,7 +11,7 @@
     <meta name="description" itemprop="description" content="@yield('description')">
     <meta name="keywords" itemprop="keywords" content="@yield('keywords')">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
-    @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/scss/createPlan.scss', 'resources/scss/confirm.scss','resources/scss/layout.scss', 'resources/js/index.js'])
+    @vite(['resources/scss/app.scss', 'resources/js/app.js','resources/scss/createPlan.scss', 'resources/scss/complete.scss','resources/scss/layout.scss', 'resources/js/index.js'])
     @yield('pageCss')
     </head>
     <body>
