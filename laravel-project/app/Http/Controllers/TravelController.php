@@ -32,12 +32,6 @@ class TravelController extends Controller
         return view('pages.createPlan');
     }
 
-    public function confirm(StoreRequest $request) 
-    {
-        return view('pages.confirmPlan', [
-            'inputs' => $request->all(),
-        ]);
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -46,16 +40,11 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        $test = $request->all();
-        if ($request->has('edit')) {
-            return redirect('/create')->withInput($request->all());
-        }
-
         DB::beginTransaction();
         try{
             $travel = new Travel();
             $travel->title = $request->title;
-            $travel->subtitle = $request->sub_title;
+            $travel->subtitle = $request->subtitle;
             $travel->save();
 
             //リクエストの内容を取得
@@ -104,9 +93,7 @@ class TravelController extends Controller
             return back()->withInput();
         }
         DB::commit();
-
-        return redirect('/create');
-
+        return view('pages.completePlan',['travel' => $travel]);
     }
 
     /**
@@ -126,9 +113,10 @@ class TravelController extends Controller
      * @param  \App\Models\Travel  $travel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Travel $travel)
+    public function edit($id)
     {
-        //
+        dump($id);
+        exit;
     }
 
     /**

@@ -20,6 +20,7 @@
                                     rows="5" placeholder="しおりのタイトル">
                                 <input class="view_sub form-control" name="subtitle" id="" cols="30"
                                     rows="5" placeholder="サブタイトル">
+
                             </div>
                             <a href="#overview"><button type="button" class="btn btn-success">プラン作成に進む</button></a>
                         </div>
@@ -41,11 +42,11 @@
                         <div class="card" id="card">
                             <div class="card-header">
                                 <input class="view_title form-control" type="text" size="30" id="view_title"
-                                    name='overview_title[]' placeholder="タイトル（メンバー、持ち物等）">
+                                    name='overview_title[]' placeholder="タイトル（メンバー、持ち物等）" value= {{ old('overview_title') }}>
                             </div>
                             <div class="card-body">
                                 <textarea class="view_body form-control" id="view_body" cols="30" rows="3" name='overview_content[]'
-                                    placeholder="内容(免許、水着等)" ></textarea>
+                                    placeholder="内容(免許、水着等)" >{{ old('overview_content') }}</textarea>
                             </div>
                             <img class="remove" src="/images/delete-bin-fill.svg" alt="" onClick="remove_card()">
                         </div>
