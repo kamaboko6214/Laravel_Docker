@@ -26,38 +26,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="overview" id="overview">
-                    @if ($errors->any())
-                        <div>
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    <h1>概要</h1>
-                    <div id="card_content" name="card_content">
-                        @foreach ($travel->overviews as $value)
-                            <div class="card" id="card">
-                                <div class="card-header">
-                                    <input type="hidden" name="overview_id[]" value="{{ $value->id }}">
-                                    <input class="view_title form-control" type="text" size="30" id="view_title"
-                                        name='overview_title[]' placeholder="タイトル（メンバー、持ち物等）" value="{{ $value->title }}">
-                                </div>
-                                <div class="card-body">
-                                    <textarea class="view_body form-control" id="view_body" cols="30" rows="3" name='overview_content[]'
-                                        placeholder="内容(免許、水着等)">{{ $value->content }}</textarea>
-                                </div>
-                                <img class="remove" src="/images/delete-bin-fill.svg" alt=""
-                                    onClick="remove_card()">
-                            </div>
-                        @endforeach
-                        <button class="add btn btn-primary rounded-pill btn-lg mt-2" onClick="add_card()" type="button"
-                            id="add_button">➕追加</button>
-                    </div>
-                </div>
                 <div class="overview-s" id="overview_s">
                     <h1>スケジュール</h1>
                     <div id="card_content_s" name="card_content">
@@ -81,11 +49,45 @@
                                 <img class="remove" src="/images/delete-bin-fill.svg" alt=""
                                     onClick="remove_card()">
                             </div>
+                            <button class="add btn btn-primary rounded-pill btn-lg mt-2" onClick="add_schedule()"
+                                type="button" id="add_button">➕追加</button>
                         @endforeach
-                        <button class="add btn btn-primary rounded-pill btn-lg mt-2" onClick="add_schedule()" type="button"
-                            id="add_button">➕追加</button>
                     </div>
                 </div>
+                <div class="overview" id="overview">
+                    @if ($errors->any())
+                        <div>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <h1>メモ</h1>
+                    <div id="card_content" name="card_content">
+                        @foreach ($travel->overviews as $value)
+                            <div class="card" id="card">
+                                <div class="card-header">
+                                    <input type="hidden" name="overview_id[]" value="{{ $value->id }}">
+                                    <input class="view_title form-control" type="text" size="30" id="view_title"
+                                        name='overview_title[]' placeholder="タイトル（メンバー、持ち物等）" value="{{ $value->title }}">
+                                </div>
+                                <div class="card-body">
+                                    <textarea class="view_body form-control" id="view_body" cols="30" rows="3" name='overview_content[]'
+                                        placeholder="内容(免許、水着等)">{{ $value->content }}</textarea>
+                                </div>
+                                <img class="remove" src="/images/delete-bin-fill.svg" alt=""
+                                    onClick="remove_card()">
+                            </div>
+
+                            <button class="add btn btn-primary rounded-pill btn-lg mt-2" onClick="add_card()" type="button"
+                                id="add_button">➕追加</button>
+                        @endforeach
+                    </div>
+                </div>
+
                 <button class="btn btn-primary">更新する</button>
             </form>
         </div>
