@@ -18,8 +18,7 @@
                                 <a class="nav-link fs-5 mx-3" href="/create">予定を作成する</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle fs-5 mx-3" href="#" id="navbarDropdown" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link fs-5 mx-3" href="/register"  aria-expanded="false">
                                     ログイン
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
