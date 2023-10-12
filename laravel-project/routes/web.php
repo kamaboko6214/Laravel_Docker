@@ -22,3 +22,8 @@ Route::get('/create', [TravelController::class, 'create']);
 Route::post('/travel/create', [TravelController::class, 'store']);
 Route::get('/travel/create/complete', [TravelController::class, 'complete']);
 Route::get('/travel/edit/{id}', [TravelController::class, 'edit'])->name('travel.edit');
+Route::post('/travel/{id}', [TravelController::class, 'update']) -> name('travel.update');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
