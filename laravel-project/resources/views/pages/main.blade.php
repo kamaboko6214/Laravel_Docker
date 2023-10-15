@@ -12,7 +12,11 @@
                         <p>予定を簡単に作成し、共有できるサービスです。</p>
                         <div class="text-center mt-5">
                             <div class="button013">
-                                <a href="/create">しおりを作成する→</a>
+                                @guest
+                                    <a href="/register">しおりを作成する→</a>
+                                @else
+                                    <a href="/create">しおりを作成する→</a>
+                                @endguest
                             </div>
                         </div>
                     </div>
@@ -28,7 +32,7 @@
                             <p>TufGugQiyebikVKzMJhtUzIvZrWPWXjtMBeWxuWjOGbpAqIPHQSmFkEmAJpJWpUgloVMyiTcgVCsOhMFRWozmEoDDnVUPPjItGLY
                             </p>
                         </div>
-                        
+
                         <div class="flex-item">
                             <div class="test_img"></div>
                         </div>
