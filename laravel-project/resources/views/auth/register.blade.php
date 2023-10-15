@@ -67,6 +67,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     新規登録
                                 </button>
+                                <a class="btn btn-link" href="{{ route('login') }}">
+                                    すでに登録されている方
+                                </a>
                             </div>
                         </div>
                     </form>

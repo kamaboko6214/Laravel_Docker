@@ -44,3 +44,4 @@ window.remove_card = (e) => {
         parent.remove()
     }
 };
+
