@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Travel;
 use App\Models\Overview;
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreRequest;
@@ -21,10 +22,10 @@ class TravelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function mypage($id)
     {
-        $travels = Travel::all();
-        return view('pages.test', ['travels' => $travels]);
+        $user = User::find($id);
+        return view('pages.mypage', ['user' => $user]);
     }
 
     /**
