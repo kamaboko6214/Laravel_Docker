@@ -36,9 +36,9 @@
                                                 <li class="nav-item">
                                                     <a class="nav-link fs-5 mx-3" href="{{ route('login') }}">ログイン</a>
                                                 </li>
-                                                {{-- <li class="nav-item">
+                                                <li class="nav-item">
                                                     <a class="nav-link fs-5 mx-3" href="{{ route('guestlogin') }}">ゲストログイン</a>
-                                                </li> --}}
+                                                </li>
                                             @endif
 
                                             @if (Route::has('register'))
@@ -60,10 +60,10 @@
                                                                      document.getElementById('logout-form').submit()">
                                                         ログアウト
                                                     </a>
-                                                    {{-- <a class="dropdown-item"
+                                                    <a class="dropdown-item"
                                                         href="{{ route('travel.mypage', ['user_id' => Auth::user()->id]) }}">
                                                         マイページ
-                                                    </a> --}}
+                                                    </a>
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                                         class="d-none">
                                                         @csrf

@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/scss/complete.scss',
                 'resources/scss/createPlan.scss',
                 'resources/scss/layout.scss',
+                'resources/scss/mypage.scss',
                 'resources/sass/app.scss',
                 'resources/js/app.js',
                 'resources/js/index.js',

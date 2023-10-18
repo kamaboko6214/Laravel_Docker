@@ -17,4 +17,8 @@ class Travel extends Model
     public function plans() {
         return $this->hasmany('App\Models\Plan');
     }
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }
